@@ -11,7 +11,7 @@ public interface TransactionService {
     Transaction createTransaction(Transaction transaction);
 
     //Get all transactions
-    List<Transaction> getEmployees();
+    List<Transaction> getAllTransactions();
 
     //delete Specific Transaction
     void  deleteTransaction(BigInteger id);

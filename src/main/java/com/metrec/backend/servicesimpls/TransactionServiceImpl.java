@@ -13,6 +13,7 @@ import java.util.List;
 public class TransactionServiceImpl implements TransactionService {
 
 
+    @Autowired
     TransactionRepo transactionRepo;
     @Override
     public Transaction createTransaction(Transaction transaction) {
@@ -20,8 +21,8 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public List<Transaction> getEmployees() {
-        return null;
+    public List<Transaction> getAllTransactions() {
+        return transactionRepo.findAll();
     }
 
     @Override
