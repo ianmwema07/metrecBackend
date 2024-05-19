@@ -1,6 +1,6 @@
 package com.metrec.backend.controllers;
 
-import com.metrec.backend.Dto.TransactionDto;
+
 import com.metrec.backend.Entities.Transaction;
 import com.metrec.backend.services.TransactionService;
 import com.metrec.backend.servicesimpls.TransactionServiceImpl;
@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -27,6 +28,7 @@ public class TransactionController {
 
 
         try {
+            transaction.setDateTime(LocalDateTime.now());
             Transaction transaction1 = transactionService.createTransaction(transaction);
             ResponseEntity<Transaction> responseEntity = new ResponseEntity<>(transaction1, HttpStatus.OK);
             logger.info("Transaction added successfully");
